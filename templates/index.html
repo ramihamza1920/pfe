@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SFG - Together We Protect Our Environnement!</title>
+    <link rel="icon" type="image/png" href="{% static 'images/logo4.png' %}">
+
+    <!-- Bootstrap Core CSS -->
+    
+
+    <link href="{% static 'index/asset/css/bootstrap.min.css' %}" rel="stylesheet" />
+    
+    <!-- Font Awesome CSS -->
+    
+    <link href="{% static 'index/css/font-awesome.min.css' %}" rel="stylesheet" />
+    
+    
+    <!-- Animate CSS -->
+    
+    <link href="{% static 'index/css/animate.css' %}" rel="stylesheet" />
+    
+    <!-- Owl-Carousel -->
+    
+    <link href="{% static 'index/css/owl.carousel.css' %}" rel="stylesheet" />
+   
+    <link href="{% static 'index/css/owl.theme.css' %}" rel="stylesheet" />
+   
+    <link href="{% static 'index/css/owl.transitions.css' %}" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+   
+    <link href="{% static 'index/css/style.css' %}" rel="stylesheet" />
+  
+    <link href="{% static 'index/css/responsive.css' %}" rel="stylesheet" />
+    
+    <!-- Colors CSS -->
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'index/css/color/green.css' %}"  />
+    
+    
+    
+    <!-- Colors CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'index/css/color/green.css' %}" title="green">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'index/css/color/light-red.css' %}" title="light-red">
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'index/css/color/blue.css' %}" title="blue">
+
+
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'index/css/color/light-blue.css' %}" title="light-blue">
+    
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'index/css/color/yellow.css' %}" title="yellow">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'index/css/color/light-green.css' %}" title="light-green">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    
+    
+    <!-- Modernizer js -->
+    
+
+    <script src="{% static 'index/js/modernizr.custom.js' %}"></script>
+
+
+    
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body class="index">
+    
+    
+    <!-- Styleswitcher
+================================================== -->
+        <div class="colors-switcher">
+            <a id="show-panel" class="hide-panel"><i class="fa fa-tint"></i></a>        
+                <ul class="colors-list">
+                    <li><a title="Light Red" onClick="setActiveStyleSheet('light-red'); return false;" class="light-red"></a></li>
+                    <li><a title="Blue" class="blue" onClick="setActiveStyleSheet('blue'); return false;"></a></li>
+                    <li class="no-margin"><a title="Light Blue" onClick="setActiveStyleSheet('light-blue'); return false;" class="light-blue"></a></li>
+                    <li><a title="Green" class="green" onClick="setActiveStyleSheet('green'); return false;"></a></li>
+                    
+                    <li class="no-margin"><a title="light-green" class="light-green" onClick="setActiveStyleSheet('light-green'); return false;"></a></li>
+                    <li><a title="Yellow" class="yellow" onClick="setActiveStyleSheet('yellow'); return false;"></a></li>
+                    
+                </ul>
+
+        </div>  
+<!-- Styleswitcher End
+================================================== -->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top" > Smart For Green </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#feature">Fonctionnalité</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#portfolio">Problèmes</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about-us">À propos</a>
+                    </li>
+                    <!-- <li>
+                        <a class="page-scroll" href="#service">Services</a>
+                    </li> -->
+                    <li>
+                        <a class="page-scroll" href="#team">
+                            Équipe</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#pricing">Solution</a>
+                    </li>
+
+                    <li>
+                        <a class="page-scroll" href="#latest-news">Dernières nouvelles</a>
+                    </li>
+                  
+                    <li>
+                        <a class="page-scroll" href="#partner">Partenaire</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+
+                    <li >
+                        <a class="page-scroll"  href="{% url 'connectas' %}"> <span style="font-weight: bolder; font-size: 18px;">Se connecter </span> </a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    
+    
+    
+    <!-- Start Home Page Slider -->
+    <section id="page-top">
+        <!-- Carousel -->
+        <div id="main-slide" class="carousel slide" data-ride="carousel">
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#main-slide" data-slide-to="0" class="active"></li>
+                <li data-target="#main-slide" data-slide-to="1"></li>
+                <li data-target="#main-slide" data-slide-to="2"></li>
+            </ol>
+            <!--/ Indicators end-->
+
+            <!-- Carousel inner -->
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img class="img-responsive" src="{% static 'index/images/marin.jpg' %}" alt="slider">
+                    <div class="slider-content">
+                        <div class="col-md-12 text-center">
+                            <h1 class="animated1">
+                    		  <span>Bienvenue à <strong>SFG</strong></span>
+                    	    </h1>
+                            <p class="animated2">Où l'innovation rencontre la durabilité !
+                                <br> Rejoignez-nous pour révolutionner l’agriculture intelligente
+                                <br> et protéger notre environnement pour un avenir plus vert.
+                            </p>
+                            <a  href="{% url 'connectas' %}" class="page-scroll btn btn-primary animated3">Commencez Maintenant</a>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Carousel item end -->
+                
+                <div class="item">
+                    <!-- <img class="img-responsive" src="images/header-back.png" alt="slider"> -->
+                    <img src="{% static 'index/images/marin1.jpg' %}" class="img-responsive" alt="slider">
+                    
+                    <div class="slider-content">
+                        <div class="col-md-12 text-center">
+                            <h1 class="animated3">
+                                <span><strong>SFG</strong> pour le plus haut</span>
+                            </h1>
+                            <p class="animated2">Atteindre de nouveaux sommets dans l’agriculture intelligente. <br>Nous visons l'excellence, <br>repousser les limites de l’innovation pour atteindre les standards les plus élevés
+                                <br> dans les pratiques agricoles durables.
+                            </p>	
+                            <a  href="{% url 'connectas' %}" class="page-scroll btn btn-primary animated1">Commencez Maintenant</a>
+                        </div>
+                    </div>
+                </div>
+                <!--/ Carousel item end -->
+                
+                <div class="item">
+                    <!-- <img class="img-responsive" src="images//galaxy.jpg" alt="slider"> -->
+                    <img src="{% static 'index/images/2.jpg' %}" class="img-responsive" alt="slider">
+                    <div class="slider-content">
+                        <div class="col-md-12 text-center">
+                            <h1 class="animated2">
+                                <span>Le chemin de<strong>Succès</strong></span>
+                            </h1>
+                            <p class="animated1">Alimenter l’innovation, susciter la collaboration. <br>Nous prospérons grâce à de nouvelles idées pionnières et à la promotion d'un esprit de collaboration,
+                                <br>ouvrant la voie au succès de l’agriculture intelligente.</p>	
+                             <a class="animated3 slider btn btn-primary btn-min-block"  href="{% url 'connectas' %}" >Commencez Maintenant</a>
+                                
+                        </div>
+                    </div>
+                </div>
+                <!--/ Carousel item end -->
+            </div>
+            <!-- Carousel inner end-->
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#main-slide" data-slide="prev">
+                <span><i class="fa fa-angle-left"></i></span>
+            </a>
+            <a class="right carousel-control" href="#main-slide" data-slide="next">
+                <span><i class="fa fa-angle-right"></i></span>
+            </a>
+        </div>
+        <!-- /carousel -->
+    </section>
+    <!-- End Home Page Slider -->
+
+    
+    
+    <!-- Start Feature Section -->
+        <section id="feature" class="feature-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="feature">
+                            <i class="fa fa-magic"></i>
+                            <div class="feature-content">
+                                <h4>Système intelligent basé sur l'IoT</h4>
+                                <p>Mettez en avant l'utilisation d'un système intelligent basé sur l'IoT qui utilise un nœud de capteur Lora à faible coût pour mesurer les paramètres climatiques afin de prédire les incendies de forêt et les incidents majeurs liés aux cultures. Insistez sur la façon dont cette technologie avancée améliore la précision et l’efficacité de la prévision des incendies.
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="feature">
+                            <i class="fa fa-signal"></i>
+                            <div class="feature-content">
+                                <h4>Communication longue portée</h4>
+                                <p>Présentez les capacités de communication à longue portée du système via le réseau Lora. Expliquez comment cette fonctionnalité permet une transmission transparente des données sur de grandes distances, permettant une surveillance efficace et la génération d'alertes en temps opportun.
+                                </p>
+                            </div>
+                        </div>
+                    </div><!-- /.col-md-3 -->
+                    <!-- <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="feature">
+                            <i class="fa fa-bell"></i>
+                            <div class="feature-content">
+                                <h4>Predictive Alert System</h4>
+                                <p>Highlight the system's ability to trigger alerts based on the collected data, providing early predictions of forest fires and major crop incidents. Emphasize how this feature helps in proactive decision-making and risk mitigation.</p>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- /.col-md-3 -->
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="feature">
+                            <i class="fa fa-globe"></i>
+                            <div class="feature-content">
+                                <h4>Application Web </h4>
+                                
+                                <p>Décrire le développement d'une application Web conviviale permettant la visualisation à distance des données collectées par le
+                                    sonar. Expliquez comment cette application permet aux utilisateurs de comprendre facilement le risque dans leur région en affichant les informations les plus récentes sur les zones piscicoles.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                        <div class="feature">
+                            <i class="fa fa-clock-o"></i>
+
+                            <div class="feature-content">
+                                <h4>Informations en temps réel</h4>
+                                <p>Mettez en évidence comment le système fournit des informations en temps réel sur les zones de pisciculture, permettant aux utilisateurs de prendre des décisions éclairées en conséquence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- /.row -->
+            
+            </div><!-- /.container -->
+        </section>
+        <!-- End Feature Section -->
+    
+    
+    <!-- Start Call to Action Section -->
+    <section class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>Découvrez le pouvoir transformateur de l’agriculture intelligente, où une technologie de pointe et des solutions basées sur les données révolutionnent les pratiques piscicoles. <br> Adoptez l'innovation, augmentez l'efficacité et cultivez un avenir durable pour l'agriculture.</h1>
+                    <!-- <button type="submit" class="btn btn-primary">Read more</button> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Call to Action Section -->
+    
+    
+    
+    <!-- Start Issues Section ************************************************************************************************-->
+        <section id="portfolio" class="portfolio-section-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center">
+                            <h3>Problèmes</h3>
+                            <p>Impact environnemental : Pollution de L'eau </p>
+                        </div>                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        
+                        <!-- Start Portfolio items -->
+                        <ul id="portfolio-list">
+                            <li>
+                                <div class="portfolio-item">
+                                    <!-- <img src="images/portfolio/img1.jpg" class="img-responsive" alt="" /> -->
+                                    <img src="{% static 'images/e1.jpg' %}" class="img-responsive" alt="...">
+
+                                    <div class="portfolio-caption">
+                                        <h4>L’élevage industriel pollue</h4>
+                                        <a href="#portfolio-modal1" data-toggle="modal" class="link-1"><i class="fa fa-magic"></i></a>
+                                        <a href="#" class="link-2"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                    <!-- <img src="images/portfolio/img2.jpg" class="img-responsive" alt="" /> -->
+                                    <img src="{% static 'images/e2.jpg' %}" class="img-responsive" alt="...">
+
+                                    <div class="portfolio-caption">
+                                        <h4>LA POLLUTION DE LA RESSOURCE EN EAU : D’OÙ VIENT-ELLE ET COMMENT LA RÉDUIRE ?</h4>
+                                        <a href="#portfolio-modal2" data-toggle="modal" class="link-1"><i class="fa fa-magic"></i></a>
+                                        <a href="#" class="link-2"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                    <!-- <img src="images/portfolio/img3.jpg" class="img-responsive" alt="" /> -->
+                                    <img src="{% static 'images/e3.png' %}" class="img-responsive" alt="...">
+
+                                    <div class="portfolio-caption">
+                                        <h4>l’hydrolienne ....</h4>
+                                        <a href="#portfolio-modal3" data-toggle="modal" class="link-1"><i class="fa fa-magic"></i></a>
+                                        <a href="#" class="link-2"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                    <!-- <img src="images/portfolio/img4.jpg" class="img-responsive" alt="" /> -->
+                                    <img src="{% static 'images/e4.jpeg' %}" class="img-responsive" alt="...">
+
+                                    <div class="portfolio-caption">
+                                        <h4> produits chimiques..</h4>
+                                        <a href="#portfolio-modal4" data-toggle="modal" class="link-1"><i class="fa fa-magic"></i></a>
+                                        <a href="#" class="link-2"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                    <!-- <img src="images/portfolio/img5.jpg" class="img-responsive" alt="" /> -->
+                                    <img src="{% static 'images/e5.png' %}" class="img-responsive" alt="...">
+
+                                    <div class="portfolio-caption">
+                                        <h4>Les déchets plastiques </h4>
+                                        <a href="#portfolio-modal5" data-toggle="modal" class="link-1"><i class="fa fa-magic"></i></a>
+                                        <a href="#" class="link-2"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="portfolio-item">
+                                    <!-- <img src="images/portfolio/img6.jpg" class="img-responsive" alt="" /> -->
+                                    <img src="{% static 'images/e6.png' %}" class="img-responsive" alt="...">
+
+                                    <div class="portfolio-caption">
+                                        <h4>Bruit sous-marin ..</h4>
+                                        <a href="#portfolio-modal6" data-toggle="modal" class="link-1"><i class="fa fa-magic"></i></a>
+                                        <a href="#" class="link-2"><i class="fa fa-link"></i></a>
+                                    </div>
+                                </div>
+                            </li>
+                            
+                            
+                        </ul>
+                        <!-- End Portfolio items -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Issues Section -->
+    
+    <!-- Start Issues Modal Section -->
+        <div class="section-modal modal fade" id="portfolio-modal1" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-content">
+                <div class="close-modal" data-dismiss="modal">
+                    <div class="lr">
+                        <div class="rl">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title text-center">
+                            <h3>L’élevage industriel pollue</h3>
+                            <span class="text-muted">Planet conditions...</span>
+                            <p> Avec des centaines voire souvent des milliers d'animaux entassés dans des lieux clos, les élevages intensifs sont susceptibles de créer toute une palette de pollutions. Ces pollutions peuvent affecter à la fois le milieu naturel, les animaux et les plantes.
+                            </p>
+                        </div>
+                    </div>
+                    <div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: -200px;">
+                        <img src="{% static 'images/e1.jpg' %}" class="img-responsive" alt="...">
+                    </div>
+                    
+                    
+                </div>                
+            </div>
+        </div>
+        <!-- End Portfolio Modal Section -->
+
+            <!-- Start Issues Modal Section -->
+            <div class="section-modal modal fade" id="portfolio-modal2" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="section-title text-center">
+                                <h3>LA POLLUTION DE LA RESSOURCE EN EAU : D’OÙ VIENT-ELLE ET COMMENT LA RÉDUIRE ?</h3>
+                                <span class="text-muted">Les origines de la pollution de la ressource en eau...</span>
+                                <p> La pollution de la ressource en eau se caractérise par la présence de micro-organismes, de substances chimiques ou encore de déchets industriels. Elle peut concerner les cours d’eau, les nappes d’eau, les eaux saumatres mais également l’eau de pluie, la rosée, la neige et la glace polaire.
+                                </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: -200px;">
+                            <img src="{% static 'images/e2.jpg' %}" class="img-responsive" alt="...">
+                        </div>
+                        
+                        
+                    </div>                
+                </div>
+            </div>
+            <!-- End Portfolio Modal Section -->
+
+            <div class="section-modal modal fade" id="portfolio-modal3" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="section-title text-center">
+                                <h3>l’hydrolienne</h3>
+                                <span class="text-muted">l’hydrolienne...</span>
+                                <p> 
+                                    Les progrès continus dans la technologie des hydroliennes ont conduit au développement de nouveaux types plus performants sur le plan de la production électrique et moins impactants sur l'environnement. Par exemple, certaines hydroliennes intègrent des pales aplaties et une ouverture centrale pour permettre aux poissons de circuler en toute sécurité, réduisant ainsi les risques pour la faune marine. Malgré ces avancées, les pêcheurs ont longtemps exprimé des réserves quant à l'installation d'hydroliennes dans leurs zones de pêche.  </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: -200px;">
+                            <img src="{% static 'images/e3.png' %}" class="img-responsive" alt="...">
+                        </div>
+                        
+                        
+                    </div>                
+                </div>
+            </div>
+
+            <div class="section-modal modal fade" id="portfolio-modal4" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="section-title text-center">
+                                <h3> Produits chimiques ..</h3>
+                                
+                                <p> c'est une dégradation d'un environnement dûe à un excès de matières nocives. Causes de la pollution de l'eau : Rejets de produits chimiques par les usines (ex : azote, phosphate), de produits ménagers (d'entretien), engrais, déchets (ex : bouteilles plastiques), marées noires... </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: -200px;">
+                            <img src="{% static 'images/e4.jpeg' %}" class="img-responsive" alt="...">
+                        </div>
+                        
+                        
+                    </div>                
+                </div>
+            </div>
+
+            <div class="section-modal modal fade" id="portfolio-modal5" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="section-title text-center">
+                                <h3>Les déchets plastiques </h3>
+                                
+                                <p>  L'EXTRACTION MINIÈRE Déchets associés, tous les trois sont couramment produites ensemble.. La figure 9.3. Gaz-eau-huile à une relation bien typique du site. Le gaz et les fluides migrent vers le point le plus élevé de la structure et de trier eux-mêmes en fonction de la densité. Comme le réservoir s'épuise, la proximité des hydrocarbures à la saumure permettant de récupérer les trois composantes.  </p>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: -200px;">
+                            <img src="{% static 'images/e5.png' %}" class="img-responsive" alt="...">
+                        </div>
+                        
+                        
+                    </div>                
+                </div>
+            </div>
+
+            <div class="section-modal modal fade" id="portfolio-modal6" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-content">
+                    <div class="close-modal" data-dismiss="modal">
+                        <div class="lr">
+                            <div class="rl">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="container">
+                        <div class="row">
+                            <div class="section-title text-center">
+                                <h3>Bruit sous-marin ...</h3>
+                                
+                                <p> Pour de nombreux organismes marins, mammifères marins, espèces de poissons et même d'invertébrés, l'ouïe est l'un des sens les plus importants. Les ondes sonores leur permettent de se déplacer et de s'orienter, de communiquer, de se nourrir et de se reproduire.</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; justify-content: center; align-items: center; height: 100vh; margin-top: -200px;">
+                            <img src="{% static 'images/e6.png' %}" class="img-responsive" alt="...">
+                        </div>
+                        
+                        
+                    </div>                
+                </div>
+            </div>
+    <!-- --------------------------------------------------------------------------------------- *********************************************************************-->
+    
+    <!-- Start About Us Section -->
+    <section id="about-us" class="about-us-section-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title text-center">
+                            <h3>À propos de nous
+                            </h3>
+                            
+                            <p><strong>Smart For Green</strong> est une startup créée en 2022 au sein du centre local d'innovation de Ras Jebel-Bizerte, son activité principale était un bureau d'études qui propose une multitude de services liés à l'agriculture intelligente visant à prévenir les incendies et assurer la protection contre les incendies de forêts. La startup Smart for Green est dirigée par une équipe de professionnels talentueux, déterminés et passionnés par leur mission. Chacun d’entre eux apporte à l’entreprise une expertise unique et une passion débordante.</p>
+                        </div>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-md-4">
+                    <div class="welcome-section text-center">
+                        <!-- <img src="images/about-01.jpg" class="img-responsive" alt=".."> -->
+                        <img src="{% static 'images/b1.jpg' %}" class="img-responsive" alt="...">
+                        <h4>Philosophie de démarrage</h4>
+                        <div class="border"></div>
+                        <p>Chez Smart for Green, notre philosophie s'articule autour de la conviction que combiner l'agriculture intelligente et la préservation de l'environnement est la clé d'un avenir durable. Nous sommes animés par la passion de tirer parti de la technologie et des informations basées sur les données pour optimiser les pratiques agricoles, nous protéger contre les incendies de forêt et assurer la viabilité à long terme de notre écosystème.</p>
+                    </div>
+                </div>
+                
+
+                <div class="col-md-4">
+                    <div class="welcome-section text-center">
+                        <!-- <img src="images/about-02.jpg" class="img-responsive" alt=".."> -->
+                        <img src="{% static 'images/bb1.jpg' %}" class="img-responsive" alt="...">
+                        <h4>Mission et vision de démarrage</h4>
+                        <div class="border"></div>
+                        <p>Notre mission chez Smart for Green est de révolutionner le paysage agricole en intégrant des pratiques agricoles intelligentes qui améliorent la productivité, la qualité et la durabilité tout en préservant l'environnement. Nous envisageons un avenir où nos solutions intelligentes responsabilisent les agriculteurs, protègent les ressources naturelles et contribuent à un monde plus vert et plus prospère.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="welcome-section text-center">
+                        <!-- <img src="images/about-03.jpg" class="img-responsive" alt=".."> -->
+                        <img src="{% static 'images/bbb1.jpg' %}" class="img-responsive" alt="...">
+                        <h4>Valeur et règles de démarrage</h4>
+                        <div class="border"></div>
+                        <p>Chez Smart for Green, nos valeurs sont ancrées dans l’intégrité, l’innovation et la collaboration. Nous nous efforçons de mener nos activités de manière éthique et transparente, en plaçant toujours les besoins de nos clients et de l'environnement au premier plan. Notre équipe s'engage à repousser les limites, à faire preuve de créativité et à favoriser une culture d'apprentissage continu. Nous opérons avec un fort sens du travail d’équipe, en adoptant des perspectives diverses et en travaillant ensemble pour atteindre nos objectifs communs.</p>
+                    </div>
+                </div>
+                
+            </div><!-- /.row -->            
+            
+        </div><!-- /.container -->
+    </section>
+    <!-- End About Us Section -->
+
+
+
+
+    
+
+
+    <!-- Start Feature Section -->
+        <!-- <section id="service" class="services-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title text-center">
+                            <h3>Our Services</h3>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-magic"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Web Design</h4>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>/.col-md-4 -->
+                    <!-- <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-css3"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">HTML5 & CSS3</h4>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- /.col-md-4 -->
+                    <!-- <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-wordpress"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Wordpress Theme</h4>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- /.col-md-4 -->
+                    <!-- <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-plug"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Wordpress Plugin</h4>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- /.col-md-4 -->
+                    <!-- <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-joomla"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Joomla Template</h4>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- /.col-md-4 -->
+                    <!-- <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="feature-2">
+                            <div class="media">
+                                <div class="pull-left">
+                                    <i class="fa fa-cube"></i>
+                                    <div class="border"></div>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="media-heading">Joomla Extension</h4>
+                                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                    <!-- /.col-md-4 -->
+                    
+                <!-- </div> -->
+                <!-- /.row -->
+            
+            <!-- </div> -->
+            <!-- /.container -->
+        <!-- </section> -->
+        <!-- End Feature Section -->
+    
+    
+    
+    <!-- Start Fun Facts Section -->
+    <!-- <section class="fun-facts">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-6 col-md-3">
+                      <div class="counter-item">
+                        <i class="fa fa-cloud-upload"></i>
+                        <div class="timer" id="item1" data-to="991" data-speed="5000"></div>
+                        <h5>Files uploaded</h5>                               
+                      </div>
+                    </div>  
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                      <div class="counter-item">
+                        <i class="fa fa-check"></i>
+                        <div class="timer" id="item2" data-to="7394" data-speed="5000"></div>
+                        <h5>Projects completed</h5>                               
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                      <div class="counter-item">
+                        <i class="fa fa-code"></i>
+                        <div class="timer" id="item3" data-to="18745" data-speed="5000"></div>
+                        <h5>Lines of code written</h5>                               
+                      </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                      <div class="counter-item">
+                        <i class="fa fa-male"></i>
+                        <div class="timer" id="item4" data-to="8423" data-speed="5000"></div>
+                        <h5>Happy clients</h5>                               
+                      </div>
+                    </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- End Fun Facts Section -->
+
+
+
+    <!-- Start Team Member Section -->
+    <section id="team" class="team-member-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="section-title text-center">
+                            <h3>Notre équipe</h3>
+                            <p>Unis par la passion, animés par l'excellence.</p>
+                        </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="team-section">
+                    
+                        
+                
+                
+
+                                <div class="our-team">
+
+                                    <div class="team-member">
+                                        <img src="{% static 'images/rami.jpg' %}" class="img-responsive" alt="...">
+                                        <div class="team-details">
+                                            <h4>Hamza Rami </h4>
+                                            <p>Développeur systèmes embarqués et IoT</p>
+                                            <ul>
+                                                <li><a href="https://github.com/Ramihamza1920"><i class="fa fa-github"></i></a></li>
+                                                <li><a href="https://www.facebook.com/rami.hamza.1420354?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="www.linkedin.com/in/rami-hamza-a99a0b28a"><i class="fa fa-linkedin"></i></a></li>
+                                              
+                                                <li><a href="https://www.facebook.com/rami.hamza.1420354?mibextid=ZbWKwL"><i class="fa fa-instagram"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                      
+
+                                    <div class="team-member">
+                                        <img src="{% static 'images/fedi.jpg' %}" class="img-responsive" alt="...">
+                                        <div class="team-details">
+                                            <h4>Barkouti Fedi </h4>
+                                            <p>Développeur systèmes embarqués et IoT</p>
+                                            <ul>
+                                                <li><a href="https://github.com/fedi07"><i class="fa fa-github"></i></a></li>
+                                                <li><a href="https://www.facebook.com/fedi.barkouti.1"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="https://www.linkedin.com/in/barkouti-fedi-871525298><i class="fa fa-linkedin"></i></a></li>
+                                              
+                                                <li><a href="https://www.facebook.com/fedi.barkouti.1"><i class="fa fa-instagram"></i></a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                    
+
+                                    <div class="team-member">
+                                        <!-- <img src="images/team/manage-2.png" class="img-responsive" alt=""> -->
+                                        <img src="{%static 'index\images\monsieur.jpg'%}" class="img-responsive" alt="...">
+                                        <div class="team-details">
+                                            <h4>Karim Fathallah</h4>
+                                            <p>Docteur en Informatique</p>
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    
+                                    
+
+                                    <div class="team-member">
+                                        <!-- <img src="images/team/manage-3.png" class="img-responsive" alt=""> -->
+                                        <img src="{% static 'images/madame.jpg' %}" class="img-responsive" alt="...">
+                                        <div class="team-details">
+                                            <h4>Maghraoui Wided</h4>
+                                            <p> professeur d'université </p>
+                                            
+                                            <ul>
+                                                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                                                <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                                            </ul>
+                                        </div>
+                                    </div>    
+
+
+         
+
+                         
+
+
+                                </div>
+
+                    
+                    </div>
+                </div>
+            </div>
+                
+        </div>
+    </section>
+    <!-- End Team Member Section -->
+
+
+
+    <!-- Start sollution Table Section -->
+    <div id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-12">
+                        <div class="section-title text-center">
+                            <h3>Notre solution</h3>
+                            <p class="white-text"><strong>PDP </strong> Protection de la pisciculture</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/YGaFNZzjCXI?si=c4ks3cx0U-JFuIqx" title="fish farming  Protection" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>                    
+         
+        </div>
+    </div>
+    <!-- End Pricing Table Section -->
+
+        <!-- Start Testimonial Section -->
+        <div id="testimonial" class="testimonial-section">
+            <div class="container">
+                <!-- Start Testimonials Carousel -->
+                <div id="testimonial-carousel" class="testimonials-carousel">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonials item">
+                        <div class="testimonial-content">
+                            <!-- <img src="images/testimonial/face_1.png" alt="" > -->
+                            <img src="{%static 'images\sol.jpg'%}"  alt="...">
+    
+                            <div class="testimonial-author">
+                                <div class="author">PDP</div>
+                                <div class="designation"><strong>P</strong>rotection <strong>De</strong>la <strong>P</strong>isciculture</div>
+                            </div>
+                            <p>La protection en pisciculture est cruciale pour garantir la santé et le bien-être de la population de poissons, <br>ainsi que la pérennité de l'opération.</p>
+                        </div>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonials item">
+                        <div class="testimonial-content">
+                            <!-- <img src="images/testimonial/face_2.png" alt="" > -->
+                            <img src="{%static 'images\sol.jpg'%}"  alt="...">
+                            <div class="testimonial-author">
+                                <<div class="author">PDP</div>
+                                <div class="designation"><strong>P</strong>rotection <strong>De</strong>la <strong>P</strong>isciculture</div>
+                            </div>
+                            <p>Une fois ces données collectées et avec l’analyse des données météorologiques lors d’une canicule,<br> le système sera capable de prédire s'il y a un danger potentiel dans des zones spécifiques, à ce stade,<br> le système permet d'avoir un tableau de bord pour une supervision en temps réel et d'alerter les intervenants.</p>
+                        
+                             </div>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonials item">
+                        <div class="testimonial-content">
+                            <!-- <img src="images/testimonial/face_3.png" alt="" > -->
+                            <img src="{%static 'images\sol.jpg'%}"  alt="...">
+                            <div class="testimonial-author">
+                                <<div class="author">PDP</div>
+                                <div class="designation"><strong>P</strong>rotection <strong>De</strong>la <strong>P</strong>isciculture</div>
+                            </div>
+                            <p>En cas de départ de pert de nouriture ou vole de péche,
+                                <br>la solution PDP permet également la détection avec des caméras thermiques et informe les gardes de la pisciculture </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- End Testimonials Carousel -->
+            </div>
+        </div>
+        <!-- End Testimonial Section -->
+
+            
+
+    
+    <!-- Start About Us Section 2 -->
+    <div class="about-us-section-2">
+        <div class="container">
+            <div class="row">
+                
+                
+                <div class="col-md-6">
+                    <div class="skill-shortcode">
+                        
+                        <!-- Progress Bar -->
+                        
+                        
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>Lora</p>          
+                            <div class="progress">         
+                                <div class="progress-bar" role="progressbar"  data-percentage="100">
+                                    <span class="progress-bar-span" >.</span>
+                                    <span class="sr-only">100% Complete</span>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>HTML & CSS</p>          
+                            <div class="progress">         
+                                <div class="progress-bar" role="progressbar"  data-percentage="100">
+                                    <span class="progress-bar-span" >.</span>
+                                    <span class="sr-only">100% Complete</span>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>Django</p>          
+                            <div class="progress">         
+                                <div class="progress-bar" role="progressbar"  data-percentage="100">
+                                    <span class="progress-bar-span" >.</span>
+                                    <span class="sr-only">100% Complete</span>
+                                </div>
+                            </div>  
+                        </div>
+                        
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>GeoDjango</p>          
+                            <div class="progress">         
+                                <div class="progress-bar" role="progressbar"  data-percentage="100">
+                                    <span class="progress-bar-span" >.</span>
+                                    <span class="sr-only">100% Complete</span>
+                                </div>
+                            </div>  
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>Leaflet</p>          
+                            <div class="progress">         
+                                <div class="progress-bar" role="progressbar"  data-percentage="100">
+                                    <span class="progress-bar-span" >.</span>
+                                    <span class="sr-only">100% Complete</span>
+                                </div>
+                            </div>  
+                        </div>
+
+                        <!-- Progress Bar -->
+                        <div class="skill">
+                            <p>Réact Native</p>          
+                            <div class="progress">         
+                                <div class="progress-bar" role="progressbar"  data-percentage="100">
+                                    <span class="progress-bar-span" >.</span>
+                                    <span class="sr-only">100% Complete</span>
+                                </div>
+                            </div>  
+                        </div>
+
+                                                            
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div id="carousel-example-generic" class="carousel slide about-slide" data-ride="carousel">
+                        <!-- Indicators -->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                        </ol>
+
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <!-- <img src="images/about-01.jpg" alt=""> -->
+                                <img src="{%static 'images\sol.jpg'%}"  class="img-responsive" alt="...">
+                            </div>
+                            <div class="item">
+                                <!-- <img src="images/about-02.jpg" alt=""> -->
+                                <img src="{%static 'images\sol.jpg'%}" class="img-responsive" alt="...">
+                            </div>
+                            <div class="item">
+                                <!-- <img src="images/about-03.jpg" alt=""> -->
+                                <img src="{%static 'images\sol.jpg'%}" class="img-responsive" alt="...">
+                            </div>
+    
+                        </div>
+  
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Start About Us Section 2 -->
+    
+    
+    
+    <!-- Start Latest News Section -->
+    <section id="latest-news" class="latest-news-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-title text-center">
+                        <h3>Dernières nouvelles
+                        </h3>
+                        <p>
+                            Duis aute irure dolor en réprimandant en volupté</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="latest-news">
+                    <div class="col-md-12">
+                        <div class="latest-post">
+                            <!-- <img src="images/about-01.jpg" class="img-responsive" alt=""> -->
+                            <img src="{% static 'images/prix2.jpg' %}" class="img-responsive" alt="...">
+                            <h4><a href="#">1er Prix du Concours National GreenTic</a></h4>
+                            <div class="post-details">
+                                <span class="date"><strong>15</strong> <br>Oct , 2022</span>
+                                
+                            </div>
+                            <p>Smart For Green remporte le premier prix national au Salon international de l'investissement et de la technologie agricoles</p>
+                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="latest-post">
+                            <!-- <img src="images/about-02.jpg" class="img-responsive" alt=""> -->
+                            <img src="{% static 'images/pp.jpg' %}" class="img-responsive" alt="...">
+                            <h4><a href="#">1er gagnant de "GO GREEN"</a></h4>
+                            <div class="post-details">
+                                <span class="date"><strong>17</strong> <br>Nov , 2022</span>
+                                
+                            </div>
+                            <p>1er gagnant de "GO GREEN" sur 15 équipes participant au concours organisé à l'Institut Arabe des Leaders d'Affaires en marge de la Global Entrepreneurship Week </p>
+                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="latest-post">
+                            <!-- <img src="images/about-03.jpg" class="img-responsive" alt=""> -->
+                            <img src="{% static 'images/ppp.jpg' %}" class="img-responsive" alt="...">
+                            <h4><a href="#">Atelier sur l'hydrogène vert</a></h4>
+                            <div class="post-details">
+                                <span class="date"><strong>21</strong> <br>Mars , 2023</span>
+                                
+                            </div>
+                            <p>Participation au « Green Hydrogen Workshop », un événement organisé par l'Ambassade d'Autriche Tunisie et l'ONUDI - Organisation des Nations Unies pour le Développement Industriel</p>
+                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="latest-post"> 
+                            <img src="images/about-01.jpg" class="img-responsive" alt="">
+                            <img src="{% static 'index/images/about-01.jpg' %}" class="img-responsive" alt="...">
+                            <h4><a href="#">Publication standard avec image</a></h4>
+                            <div class="post-details">
+                                <span class="date"><strong>08</strong> <br>aout , 2014</span>
+                                
+                            </div>
+                            <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo invente veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                            <a href="#" class="btn btn-primary">En savoir plus</a>
+                        </div>
+                    </div>
+                  
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Latest News Section -->
+
+
+    
+    
+
+    
+    
+    
+    
+    
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title text-center">
+                        <h3>En contact avec nous
+                        </h3>
+                        <p class="white-text">Duis aute irure dolor en réprimandant en volupté</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <!-- <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-primary">Send Message</button>
+                            </div>
+                        </div>
+                    </form> -->
+                </div>
+            </div>
+            <div style="display: flex; justify-content: center;">
+                <div class="col-md-4">
+                  <div class="footer-contact-info">
+                    <h4>Informations de contact</h4>
+                    <ul>
+                      <li><strong>E-mail:</strong> ramihamza237@gmail.com</li>
+                      <li><strong>Télephone:</strong> +216 22 990 385</li>
+                      <li><a href="https://github.com/Ramihamza1920"><i class="fa fa-github"></i> </a>Github</li>
+                      <li><a href="https://www.facebook.com/rami.hamza.1420354?mibextid=ZbWKwL"><i class="fa fa-facebook"></i> </a>Facebook</li>
+                      <li><a href="www.linkedin.com/in/rami-hamza-a99a0b28a"><i class="fa fa-linkedin"></i></a> Linkedin</li>         
+                      <li><a href="https://www.facebook.com/rami.hamza.1420354?mibextid=ZbWKwL"><i class="fa fa-instagram"></i></a> Instagram</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="footer-contact-info">
+                    <h4>Informations de contact</h4>
+                    <ul>
+                      <li><strong>E-mail:</strong> barkoutifedi15@gmail.com</li>
+                      <li><strong>Télephone:</strong> +216 53 936 228</li>
+                      <li><a href="https://github.com/fedi07"><i class="fa fa-github"></i> </a>Github</li>
+                      <li><a href="https://www.facebook.com/fedi.barkouti.1?locale=fr_FR"><i class="fa fa-facebook"></i> </a>Facebook</li>
+                      <li><a href="https://www.linkedin.com/in/barkouti-fedi-871525298/"><i class="fa fa-linkedin"></i></a> Linkedin</li>         
+                      <li><a href="https://www.facebook.com/fedi.barkouti.1?locale=fr_FR"><i class="fa fa-instagram"></i></a> Instagram</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              
+        </div>
+        <footer class="style-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-12">
+                        <span class="copyright">droits d'auteur &copy; <a href="http://127.0.0.1:8000/">SmartForGreen</a> 2024</span>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="footer-social text-center">
+                            <ul>
+                                <li><a href="https://github.com/Ramihamza1920"><i class="fa fa-github"></i></a></li>
+                                <li><a href="https://www.facebook.com/rami.hamza.1420354?mibextid=ZbWKwL"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="www.linkedin.com/in/rami-hamza-a99a0b28a"><i class="fa fa-linkedin"></i></a></li>
+                              
+                                <li><a href="https://www.facebook.com/rami.hamza.1420354?mibextid=ZbWKwL"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-xs-12">
+                        <div class="footer-link">
+                            <ul class="pull-right">
+                                <li><a href="#">politique de confidentialité</a>
+                                </li>
+                                <li><a href="#">Conditions d'utilisation</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+
+    <div id="loader">
+        <div class="spinner">
+            <div class="dot1"></div>
+            <div class="dot2"></div>
+        </div>
+    </div>
+
+    
+
+    <!-- jQuery Version 2.1.1 -->
+    <!-- <script src="js/jquery-2.1.1.min.js"></script> -->
+    <script src="{% static 'index/js/jquery-2.1.1.min.js' %}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <!-- <script src="asset/js/bootstrap.min.js"></script> -->
+    <script src="{% static 'index/asset/js/bootstrap.min.js' %}"></script>
+
+    <!-- Plugin JavaScript -->
+    <!-- <script src="js/jquery.easing.1.3.js"></script> -->
+    <script src="{% static 'index/js/jquery.easing.1.3.js' %}"></script>
+
+    <!-- <script src="js/classie.js"></script> -->
+    <script src="{% static 'index/js/classie.js' %}"></script>
+
+    <!-- <script src="js/count-to.js"></script> -->
+    <script src="{% static 'index/js/count-to.js' %}"></script>
+
+    <!-- <script src="js/jquery.appear.js"></script> -->
+    <script src="{% static 'index/js/jquery.appear.js' %}"></script>
+
+    <!-- <script src="js/cbpAnimatedHeader.js"></script> -->
+    <script src="{% static 'index/js/cbpAnimatedHeader.js' %}"></script>
+
+    <!-- <script src="js/owl.carousel.min.js"></script> -->
+    <script src="{% static 'index/js/owl.carousel.min.js' %}"></script>
+
+	<!-- <script src="js/jquery.fitvids.js"></script> -->
+    <script src="{% static 'index/js/jquery.fitvids.js' %}"></script>
+
+	<!-- <script src="js/styleswitcher.js"></script> -->
+    <script src="{% static 'index/js/styleswitcher.js' %}"></script>
+
+    <!-- Contact Form JavaScript -->
+    <!-- <script src="js/jqBootstrapValidation.js"></script> -->
+    <script src="{% static 'index/js/jqBootstrapValidation.js' %}"></script>
+
+    <!-- <script src="js/contact_me.js"></script> -->
+    <script src="{% static 'index/js/contact_me.js' %}"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <!-- <script src="js/script.js"></script> -->
+    <script src="{% static 'index/js/script.js' %}"></script>
+
+</body>
+
+</html>
