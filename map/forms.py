@@ -150,7 +150,7 @@ class Form_client(forms.Form):
             plain_message = strip_tags(html_message)
             
             # Send the email
-            send_mail(subject, plain_message, 'benahmedyasmin@gmail.com', [email], html_message=html_message)
+            send_mail(subject, plain_message, 'ramihamza237@gmail.com', [email], html_message=html_message)
             
 
 

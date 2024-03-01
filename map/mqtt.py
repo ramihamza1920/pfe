@@ -7,7 +7,7 @@ from django.conf import settings
 from .models import *
 import pyowm
 import csv 
-from .FWI import *
+
 from datetime import datetime
 
 topics = ['v3/my-lora1-application@ttn/devices/eui-70b3d57edd05a535/up','v3/my-lora1-application@ttn/devices/eui-70b3d57ed005ca2c/up', 'v3/loraatest02@ttn/devices/eui-70b3d57ed005a5c4/up', 'v3/loraatest02@ttn/devices/eui-70b3d57ed005c92e/up']
@@ -82,18 +82,9 @@ def on_message(mqtt_client, userdata, msg):
                 writer = csv.writer(file)
                 writer.writerow([datetime.today().strftime('%m/%d/%Y'), temperature, humidity, wind_speed, rain_volume, '0'])
 
-            batchFWI('testBatch.csv')
+            
 
-            with open('testBatch.csv', mode='r') as file:
-                        reader = csv.reader(file)
-                        rows = list(reader)
-                        last_row = rows[-1]
-                        FWI = last_row[-1]
-
-            fwi = float(FWI)
-            n.FWI=fwi
-            n.save()
-            print('------mqt--FWI',n.FWI)
+            
 
 
 

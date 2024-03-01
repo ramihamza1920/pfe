@@ -15,9 +15,9 @@ from django.http import JsonResponse
 from django.contrib.gis.geos import Point
 from .forms import *
 import pyowm 
-from .status import result
+
 import csv 
-from .FWI import *
+
 from datetime import datetime
 
 from django.core.mail import send_mail
@@ -264,8 +264,7 @@ def update_weather(request, id):
         'battery' :n.Battery_value,
         'reference' :n.reference,
         'node_range' : n.node_range,
-        'fwi' : n.FWI,
-        'status' : n.status,
+        
         'node':n.nom,
         'x':n.position.x,
         'y':n.position.y,
@@ -284,8 +283,7 @@ def update_weather(request, id):
     onode.status=stat
     onode.save() 
     
-    node_status = onode.status
-    node_fwi = onode.FWI
+    
     node_rssi = onode.RSSI
     node_battery=onode.Battery_value
     node_name =onode.nom
@@ -301,8 +299,7 @@ def update_weather(request, id):
         'battery' :node_battery,
         'reference' :node_reference,
         'node_range' : node_range,       
-        'fwi' : node_fwi,
-        'status' : node_status,
+        
         'node':node_name,
         'x':onode.position.x,
         'y':onode.position.y,
