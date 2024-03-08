@@ -11,7 +11,7 @@ from signup.models import supervisor
 from django.contrib.gis.geos import GEOSGeometry
 from django.views.decorators.csrf import csrf_exempt
 
-from django.http import JsonResponse
+from django.http import HttpResponseServerError, JsonResponse
 from django.contrib.gis.geos import Point
 from .forms import *
 import pyowm 
@@ -175,7 +175,7 @@ def add_node(request, id,pseudo):
         list_p=[]
         for p in parcelles:
             list_p.append(p)
-        
+        print('----------------------',list_p)
         
         instance = node(position=point,nom=node_name, polyg=project_instance,parc=list_p[node_range-1], latitude=mylatitude, longitude=mylongitude,reference=reference,node_range=node_range,Sensors=Sensors)
         instance.save()
@@ -185,12 +185,15 @@ def add_node(request, id,pseudo):
         new_data.save()
 
         datas = Data.objects.filter(node=instance)
+        print('hello')
+        print(instance.nom)
+        print(datas)
+    
 
         return redirect('all',pseudo,id)
 
     return render(request, 'add_node.html', { 'projects': projects, 'project': project,'nodee':nodeq,'supervisor':supervisor_obj})
 #--------------------------------------------------------------------
-
 def start_mqtt(request,id):
 
     return render(request, 'all.html', {})
@@ -342,6 +345,7 @@ def update_color(request, id):
 
 ########extra page -- only for modification
 
+
 def ALL(request,id,pseudo):
     supervisor_obj = supervisor.objects.get(pseudo=pseudo)
     projects = myProject.objects.filter(supervisorp=supervisor_obj).order_by('-polygon_id')
@@ -349,7 +353,8 @@ def ALL(request,id,pseudo):
     project = myProject.objects.get(polygon_id=id)
     nodes = node.objects.filter(polyg=project).order_by('-Idnode')
    
-    onode = nodes[0] 
+    onode = nodes[0] # =======node_instance// onlyy for the last one
+    # print(onode) 
 
     datas = Data.objects.filter(node=onode).order_by('-IdData')
     data = datas.first()
@@ -360,18 +365,29 @@ def ALL(request,id,pseudo):
     for node_instance in nodes:
         datas = Data.objects.filter(node=node_instance).order_by('-IdData')
         data = datas.first()
-        nodes_data.append({'node_instance': node_instance, 'data': data})        
+        nodes_data.append({'node_instance': node_instance, 'data': data})
+        
+
+        
     data_list = []
     for n in nodes :
         ds = Data.objects.filter(node=n).order_by('-IdData').first()
         data_list.append(
             ds,
         )
+    
+    # print('__________data_list',data_list)
            
     for i in range(len(data_list)):
         ldn0 = data_list[i]
+        # print(ldn0)
+        # print('______data_list node status',ldn0.node.status)
+        # print('______ fwi',ldn0.node.FWI)
         
+    # print('------nodes_data',nodes_data)
     context = {'nodes_data': nodes_data,'supervisor':supervisor_obj,'nodee': nodeq,'node':onode,'projects':projects, 'project': project,'parm':data,'ldn':data_list}
+   
+
     return render(request, 'ALL_node.html',context )
 
 
@@ -389,28 +405,8 @@ def final(request,id,pseudo):
         dat = Data.objects.filter(node=n).order_by('-IdData').first()
         data_list.append(
             dat,
+
         )
-
-        print(n.status)
-
-        if n.status == 'EXTREME':
-            # Prepare the email subject and message
-            subject = 'Alerte'
-            context = {
-                'client_name': project.clientp,  
-                'node_status': n.status, 
-                'node_name' : n.nom,
-                'project_name' : project,
-                'supervisor' : supervisor_obj,
-                'sup_phone' : supervisor_obj.NB_GSM, 
-            }
-            html_message = render_to_string('alert_email_template.html', context)
-            plain_message = strip_tags(html_message)
-
-            # Send the email
-            send_mail(subject, plain_message, 'ramihamza237@gmail.com', [project.clientp.e_mail], html_message=html_message)
-
-
     
     if request.method == 'POST':
     
@@ -423,7 +419,7 @@ def final(request,id,pseudo):
     'nodes': nodes,
     'nodee': nodeq,
     'ldn': data_list,
-    'project_exists': True  
+    'project_exists': True  # Add this line
         }
 
     return render(request, 'final.html',context )
@@ -436,6 +432,7 @@ def final2(request,id,pseudo,idnode):
     nodes = node.objects.filter(polyg=project).order_by('-Idnode')
     nod = node.objects.get(Idnode=idnode) 
     ds = Data.objects.filter(node=nod).order_by('-IdData').first()
+    # print('*****************',ds)
     nodeq = node.objects.filter(polyg=project)
     
     data_list = []
@@ -445,20 +442,24 @@ def final2(request,id,pseudo,idnode):
             dat,
         )
         
-    
+    print(data_list)
 
-    ltemp = []
-    lhum = []
+    ltemp =[]
+    dss = Data.objects.filter(node=nod).order_by('-IdData')
+    for d in dss :
+        
+        ltemp.append(
+            d.temperature,
+        )
 
-    # Query for temperature data
-    temp_data = Data.objects.filter(node=nod)
-    for d in temp_data:
-        ltemp.append(d.temperature)
-
-    # Query for humidity data
-    hum_data = Data.objects.filter(node=nod)
-    for d in hum_data:
-        lhum.append(d.humidity)
+        lhum =[]
+    # dss = Data.objects.filter(node=n).order_by('-IdData')
+    for d in dss :
+        
+        lhum.append(
+            d.humidity,
+        )
+    # print('!!!!22!!!--------dss',lhum)
 
     
     context={'supervisor':supervisor_obj,'projects':projects, 'project': project,'nodes':nodes,'nod':nod,'ds':ds, 'ltemp':ltemp, 'lhum':lhum, 'ldn':data_list,'nodee':nodeq}
@@ -472,6 +473,7 @@ def final3(request,id,pseudo,idnode):
     nodes = node.objects.filter(polyg=project).order_by('-Idnode')
     nod = node.objects.get(Idnode=idnode) 
     ds = Data.objects.filter(node=nod).order_by('-IdData').first()
+    # print('*****************',ds)
     nodeq = node.objects.filter(polyg=project)
     
     data_list = []
@@ -481,7 +483,7 @@ def final3(request,id,pseudo,idnode):
             dat,
         )
         
-    
+    print(data_list)
 
     
     context={'supervisor':supervisor_obj,'projects':projects, 'project': project,'nodes':nodes,'nod':nod,'ds':ds, 'ldn':data_list,'nodee':nodeq}
@@ -506,16 +508,16 @@ def interface_c(request, id,pseudo):
            
     for i in range(len(data_list)):
         ldn0 = data_list[i]
+        print(ldn0)
+    
+    
+    for proj_instance in projects:
+        print('namep',proj_instance.nomp)
         
-    
-    
-    
-        
-       ########### polyg = proj-instance ##############"" 
-    nodeq = node.objects.filter(polyg=project)
+    nodeq = node.objects.filter(polyg=proj_instance)
     for node_instance in nodeq:
         nom=node_instance.nom
-        
+        print(nom)
 
 
     nodes_data = []
@@ -523,7 +525,7 @@ def interface_c(request, id,pseudo):
         datas = Data.objects.filter(node=node_instance).order_by('-IdData')
         data = datas.first()
         nodes_data.append({'node_instance': node_instance, 'data': data})
-        
+        print(data)
 
     context = {'ldn':data_list,'nodes_data': nodes_data,'nodee':nodeq,'clientp':clientp,'project': proj, 'pseudo': pseudo,'node_instance':node_instance}
     return render(request, 'interface_c.html', context)
@@ -587,6 +589,8 @@ def locate(request, id,pseudo,idnode):
     
 
     ds = Data.objects.filter(node=nod).order_by('-IdData').first()
+    # print('*******8888**********',ds.node.FWI)
+    # print('*******8888**********',ds.node.status)
     nodeq = node.objects.filter(polyg=proj)
     
     data_list = []
@@ -596,7 +600,7 @@ def locate(request, id,pseudo,idnode):
             dat,
         )
         
-    
+    print(data_list)
     
     context = {'client':clientp,'project':proj,'nodes':nodes,'nod':nod,'ds':ds, 'ldn':data_list,'nodee':nodeq}
     return render(request, 'locate.html', context)
@@ -610,6 +614,7 @@ def details(request, id,pseudo,idnode):
 
     nod = node.objects.get(Idnode=idnode) 
     ds = Data.objects.filter(node=nod).order_by('-IdData').first()
+    # print('*****************',ds)
     nodeq = node.objects.filter(polyg=proj)
     
     data_list = []
@@ -619,22 +624,28 @@ def details(request, id,pseudo,idnode):
             dat,
         )
         
-    ltemp = []
-    lhum = []
+    print(data_list)
 
-    # Query for temperature data
-    temp_data = Data.objects.filter(node=nod)
-    for d in temp_data:
-        ltemp.append(d.temperature)
 
-    # Query for humidity data
-    hum_data = Data.objects.filter(node=nod)
-    for d in hum_data:
-        lhum.append(d.humidity)
+    ltemp =[]
+    dss = Data.objects.filter(node=nod).order_by('-IdData')
+    for d in dss :
         
+        ltemp.append(
+            d.temperature,
+        )
+
+    lhum =[]
+    # dss = Data.objects.filter(node=n).order_by('-IdData')
+    for d in dss :
+        
+        lhum.append(
+            d.humidity,
+        )
+    print('!!!!22!!!--------dss',lhum)
 
     
-    context={'client':clientp,'project':proj,'ltemp':ltemp,'lhum':lhum, 'nodes':nodes,'nod':nod,'ds':ds, 'ldn':data_list,'nodee':nodeq}
+    context={'client':clientp,'project':proj, 'nodes':nodes,'nod':nod,'ds':ds, 'ltemp':ltemp, 'lhum':lhum, 'ldn':data_list,'nodee':nodeq}
     return render(request, 'details.html', context)
     
     
@@ -689,7 +700,7 @@ def modify_1(request, pseudo, id):
                 project.clientp=new_client
                 project.piece_joinde=new_piece_joinde
                 project.save()
-                return redirect('final',pseudo=pseudo,id=project.polygon_id)
+                return redirect('ALL_node',pseudo=pseudo,id=project.polygon_id)
             else:
                 project.nomp=new_name
                 project.descp=new_descp
@@ -698,7 +709,7 @@ def modify_1(request, pseudo, id):
                 project.cityp=new_cityp
                 project.piece_joinde=new_piece_joinde
                 project.save()              
-                return redirect('final',pseudo=pseudo,id=project.polygon_id)
+                return redirect('ALL_node',pseudo=pseudo,id=project.polygon_id)
 
             
         return render(request, 'modify_1.html', {'form': formulairep,'projects':projects,'supervisor':supervisors})
@@ -738,12 +749,3 @@ def modify_3(request, pseudo, id):
 
 
     
-        
-
-    
-
-
-        
- 
-
-
