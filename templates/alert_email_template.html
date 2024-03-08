@@ -59,22 +59,23 @@
 </head>
 <body>
     <div class="container">
-        <h1>Alert: Node Status - {{ node_status }}</h1>
-        <p>Dear <strong>{{ client_name }}</strong>,</p>
-        <p>Your project name is: {{ project_name }}</p>
-        <p>We would like to inform you that the status of your node <strong>{{node_name}}</strong> is currently <strong>{{ node_status }}</strong>.</p>
-        <p>Please take appropriate action and be careful !</p>
+        <h1>Alerte: Node Status - {{ node_status }}</h1>
+        <p>
+            Chèr(e) <strong>{{ client_name }}</strong>,</p>
+        <p>Le nom de votre projet est: {{ project_name }}</p>
+        <p>Nous tenons à vous informer que l'état de votre nœud <strong>{{node_name}}</strong> est actuellement <strong>{{ node_status }}</strong>.</p>
+        <p>veuillez prendre les mesures appropriées et soyez prudent !</p>
         <div class="advice">
-            <h2>Advice:</h2>
+            <h2>Conseil:</h2>
             <ul>
-                <li>Stay informed about the current plot conditions.</li>
+                <li>Restez informé des conditions actuelles du terrain.</li>
                 <li>Take necessary precautions to ensure safety.</li>
-                <li>Contact the relevant authorities or support team for assistance.</li>
+                <li>Contactez les autorités compétentes ou l’équipe d’assistance pour obtenir de l’aide.</li>
             </ul>
         </div>
-        <p class="signature">Best regards,</p>
-        <p class="signature"><strong>Supervisor</strong>: {{ supervisor }}</p>
-        <p class="signature">Feel free to contact me in case you need help!</p>
+        <p class="signature">Cordialement,</p>
+        <p class="signature"><strong>Superviseur</strong>: {{ supervisor }}</p>
+        <p class="signature">N'hésitez pas à me contacter si vous avez besoin d'aide !</p>
         <p class="signature">{{ sup_phone }}</p>
     </div>
 </body>

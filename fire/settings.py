@@ -151,7 +151,7 @@ EMAIL_USE_TLS=True
 
 EMAIL_HOST_USER='ramihamza237@gmail.com'
 
-EMAIL_HOST_PASSWORD='11422697Rami.'
+EMAIL_HOST_PASSWORD='kgqhbtdjlmnnbopa'
 
 ###################################################################
 MQTT_SERVER = 'eu1.cloud.thethings.network'
