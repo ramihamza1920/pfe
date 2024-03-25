@@ -317,14 +317,26 @@
 
 
  <script>
+
+    
     var geojson_str = "{{ project.geomp.json|escapejs }}";
-    var geojson = JSON.parse(geojson_str);
-    var map = L.map('map').setView([{{ project.geomp.centroid.y }}, {{ project.geomp.centroid.x }}], 12.5);
-     L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-      attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        var geojson = JSON.parse(geojson_str);
+        var bounds = L.geoJSON(geojson).getBounds();
+        var map = L.map('map').fitBounds(bounds);
+        L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            attribution: 'Tiles © Esri — Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
         }).addTo(map);
 
-    L.geoJSON(geojson).addTo(map);
+        // Calculer le nouvel ensemble de limites pour effectuer un zoom out de 50%
+        var newBounds = map.getBounds().pad(0.7);
+
+        // Réajuster la vue de la carte avec les nouvelles limites
+        map.fitBounds(newBounds);
+     
+        
+  
+
+        
 
     {% for d in ldn %}
         
@@ -362,6 +374,8 @@
 
     {%endfor%}
 
+     // Fonction pour rediriger vers la page details.html avec les informations du polygone
+     
 
    $(document).ready(function() {
       setInterval(function() {
@@ -478,6 +492,10 @@
          }, 5000); // refresh every  seconds
      });
 
+
+
+
+    
 
     </script>
        

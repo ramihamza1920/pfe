@@ -34,6 +34,6 @@ urlpatterns = [
     path('<int:id>/Client_<str:pseudo>/', views.clientd, name='clientd'),
     path('<int:id>/Client_<str:pseudo>/nodes', views.clientn, name='clientn'),
     path('sup_<str:pseudo>/p_<int:id>/locate/n_<int:idnode>', views.locate, name='locate'),
+    
     path('sup_<str:pseudo>/p_<int:id>/details/n_<int:idnode>', views.details, name='details'),
-   
 ]
