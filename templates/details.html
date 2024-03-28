@@ -12,7 +12,7 @@
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" 
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-  
+
     <!-- Leaflet Draw CSS and JS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
@@ -242,100 +242,97 @@
           </style>
  
   </head>
-  <body><div class="area"></div>
+  <body>
+    <div class="area"></div>
 
     <nav class="main-menu">
 
-    <ul>
+        <ul>
 
-        <li style="margin-bottom: 50px;">
-            <a href="#" style="display: flex; align-items: center; color: white; text-decoration: none; height:100px;">
-                <img src="{{ client.image.url }}" alt="profile img" style="width: 35px; height: 35px; border-radius: 50%; overflow: hidden; margin-right: 20px; margin-left: 10px; margin-top: 15px;">
-                <div>
-                    <h4 style="margin-bottom: 0; font-size: 20px;">{{ client.prenom }} {{ client.nom }}</h4>
-                    <h6 style="margin-top: 2px; margin-bottom: 5px; font-size: 15px;">Bienvenu(e), {{ client.pseudo }}!</h6>
-                </div>
-            </a>
-        </li>
-        
+            <li style="margin-bottom: 50px;">
+                <a href="#" style="display: flex; align-items: center; color: white; text-decoration: none; height:100px;">
+                    <img src="{{ client.image.url }}" alt="profile img" style="width: 35px; height: 35px; border-radius: 50%; overflow: hidden; margin-right: 20px; margin-left: 10px; margin-top: 15px;">
+                    <div>
+                        <h4 style="margin-bottom: 0; font-size: 20px;">{{ client.prenom }} {{ client.nom }}</h4>
+                        <h6 style="margin-top: 2px; margin-bottom: 5px; font-size: 15px;">Bienvenu(e), {{ client.pseudo }}!</h6>
+                    </div>
+                </a>
+            </li>
 
-       <li>
-            <a href="{% url 'home' %}">
-                <i class="fa fa-home fa-2x" style="font-size:22px"></i>
-                <span class="nav-text">
-                    Maison
-                </span>
-            </a>
-        </li>
-        <li class="has-subnav">
-            <a href="{% url 'clientd' project.polygon_id client.pseudo %}">
-                <i style="font-size:20px" class="fa">&#xf0e4;</i>
-                <span class="nav-text">
-                    Page d'accueil
-                </span>
-            </a>
-        </li>
-        <li class="has-subnav">
-            <a href="{% url 'clientn' project.polygon_id client.pseudo %}" style="height:35px;">
-                <i class="fas fa-cloud" style="margin-right:19px; margin-left:20px; margin-top:8px; font-size:17px"></i>
-                <span class="nav-text">
-                    Liste des nœuds
-                </span>
-            </a>
-        </li>
-        <li class="has-subnav">
-            <a href="#">
-                <i class="fa fa-user"></i>
-                <span class="nav-text">
-                    Profil
-                </span>
-            </a>
-        </li>
-        <li class="has-subnav">
-            <a href="#">
-                <i class="fa fa-gear"></i>
-                <span class="nav-text">
-                    Paramètres
-                </span>
-            </a>
-        </li>
 
-        
-
-        <li class="has-subnav" >
-            <a href="#" style="height:35px;">
-                <i class="fas fa-info-circle " style="margin-right:20px; margin-left:20px; margin-top:8px; font-size:20px" ></i>
-                <span class="nav-text" >
-                    Documentation
-                </span>
-            </a>
-        </li>
-     </ul>
-     
-
-            <ul class="logout">
-                <li>
-                   <a href="{% url 'connectasclient' %}">
-                         <i class="fa fa-power-off fa-2x"></i>
-                        <span class="nav-text">
-                            Sortie
-                        </span>
-                    </a>
-                </li>  
-            </ul>
-        </nav>
-
-        <div id="myChart"></div>
+            <li>
+                <a href="{% url 'home' %}">
+                    <i class="fa fa-home fa-2x" style="font-size:22px"></i>
+                    <span class="nav-text">
+                        Maison
+                    </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="{% url 'clientd' project.polygon_id client.pseudo %}">
+                    <i style="font-size:20px" class="fa">&#xf0e4;</i>
+                    <span class="nav-text">
+                        Page d'accueil
+                    </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="{% url 'clientn' project.polygon_id client.pseudo %}" style="height:35px;">
+                    <i class="fas fa-cloud" style="margin-right:19px; margin-left:20px; margin-top:8px; font-size:17px"></i>
+                    <span class="nav-text">
+                        Liste des nœuds
+                    </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="#">
+                    <i class="fa fa-user"></i>
+                    <span class="nav-text">
+                        Profil
+                    </span>
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="#">
+                    <i class="fa fa-gear"></i>
+                    <span class="nav-text">
+                        Paramètres
+                    </span>
+                </a>
+            </li>
 
 
 
+            <li class="has-subnav">
+                <a href="#" style="height:35px;">
+                    <i class="fas fa-info-circle " style="margin-right:20px; margin-left:20px; margin-top:8px; font-size:20px"></i>
+                    <span class="nav-text">
+                        Documentation
+                    </span>
+                </a>
+            </li>
+        </ul>
 
 
+        <ul class="logout">
+            <li>
+                <a href="{% url 'connectasclient' %}">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Sortie
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    
 
 
-        
- 
-  </body>
+    
+
+    
+</body>
     </html>
 
 

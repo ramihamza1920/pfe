@@ -745,7 +745,3 @@ def modify_3(request, pseudo, id):
         return redirect('addnode', pseudo=supervisor_obj.pseudo, id=project.polygon_id)
         
   
-
-
-
-    
