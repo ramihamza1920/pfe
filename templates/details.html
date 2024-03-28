@@ -17,6 +17,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js"></script>
 
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
@@ -216,6 +219,10 @@
         text-align: center;
         
       }
+      #chart-container {
+            width: 70%;
+            margin: 0 auto;
+        }
       
       .title {
         font-size: 32px;
@@ -240,7 +247,10 @@
 
 
           </style>
- 
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Aquaculture Data</title>
+ <!-- Inclure Chart.js depuis CDN -->
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
   <body>
     <div class="area"></div>
@@ -260,14 +270,7 @@
             </li>
 
 
-            <li>
-                <a href="{% url 'home' %}">
-                    <i class="fa fa-home fa-2x" style="font-size:22px"></i>
-                    <span class="nav-text">
-                        Maison
-                    </span>
-                </a>
-            </li>
+            
             <li class="has-subnav">
                 <a href="{% url 'clientd' project.polygon_id client.pseudo %}">
                     <i style="font-size:20px" class="fa">&#xf0e4;</i>
@@ -327,7 +330,82 @@
     </nav>
 
     
+<section>
+    <div id="chart-container">
+        <canvas id="aquacultureChart" width="800" height="400"></canvas>
+    </div>
 
+    <!-- JavaScript pour créer le graphique -->
+    <script>
+        // Attendre que le DOM soit chargé
+        document.addEventListener('DOMContentLoaded', function() {
+            // Obtenir le contexte du canvas
+            var ctx = document.getElementById('aquacultureChart').getContext('2d');
+            // Données du graphique
+            var data = {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                datasets: [{
+                    label: 'pH Level',
+                    data: [7.2, 7.1, 7.0, 7.3, 7.2, 7.0, 7.1, 7.2, 7.0, 7.2, 7.1, 7.3],
+                    borderColor: 'rgba(255, 99, 132, 1)',
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    fill: false
+                }, {
+                    label: 'Water Temperature (°C)',
+                    data: [25, 26, 26, 27, 27, 28, 28, 29, 29, 28, 27, 26],
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    fill: false
+                }]
+            };
+            // Options du graphique
+            var options = {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                }
+            };
+            // Trouver les 10 jours les plus actifs
+            var activeDays = [];
+            var phData = data.datasets[0].data;
+            for (var i = 0; i < 10; i++) {
+                var ph = phData[i];
+                if (ph > 7.1) { // Définir vos critères pour déterminer les jours les plus actifs
+                    activeDays.push(i);
+                }
+            }
+            // Créer le graphique
+            var aquacultureChart = new Chart(ctx, {
+                type: 'line',
+                data: data,
+                options: options
+            });
+            // Ajouter des marqueurs pour les jours les plus actifs sur la ligne du pH
+            activeDays.forEach(function(day) {
+                var point = data.datasets[0].data[day];
+                aquacultureChart.config.options.plugins.annotation = {
+                    annotations: [{
+                        type: 'line',
+                        mode: 'vertical',
+                        scaleID: 'x',
+                        value: day,
+                        borderColor: 'rgba(0,0,0,0.6)',
+                        borderWidth: 1,
+                        label: {
+                            content: 'Active Day (pH Level: ' + point + ')',
+                            enabled: true,
+                            position: 'top'
+                        }
+                    }]
+                };
+                aquacultureChart.update();
+            });
+        });
+    </script>
+</section>
 
     
 
